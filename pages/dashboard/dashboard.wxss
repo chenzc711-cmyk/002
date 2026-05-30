@@ -4,7 +4,6 @@
   padding: 44rpx 34rpx;
   border-radius: 34rpx;
   color: #ffffff;
-  text-align: center;
   background: linear-gradient(135deg, #ff0036 0%, #ff4d4f 48%, #ff8a00 100%);
   box-shadow: 0 22rpx 60rpx rgba(255, 0, 54, 0.25);
   margin-bottom: 26rpx;
@@ -50,7 +49,6 @@
   padding: 24rpx;
   border-radius: 28rpx;
   background: #ffffff;
-  text-align: center;
   box-shadow: 0 12rpx 36rpx rgba(0, 0, 0, 0.05);
   border: 1rpx solid #fff0f3;
 }
@@ -73,14 +71,12 @@
   color: inherit;
   opacity: 0.72;
   font-size: 24rpx;
-  text-align: center;
 }
 
 .metric-value {
   display: block;
   margin-top: 18rpx;
   font-size: 42rpx;
-  text-align: center;
   font-weight: 800;
   color: inherit;
 }
@@ -95,7 +91,6 @@
   border-radius: 24rpx;
   padding: 26rpx;
   background: #fff7f8;
-  text-align: center;
 }
 
 .flow-value, .flow-money {
@@ -115,9 +110,8 @@
 
 .month-panel {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 18rpx;
   padding: 24rpx;
   border-radius: 22rpx;
   margin-top: 16rpx;

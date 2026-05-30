@@ -3,8 +3,7 @@
 }
 .balance-row {
   display: flex;
-  justify-content: center;
-  gap: 28rpx;
+  justify-content: space-between;
   padding: 18rpx 0;
   border-bottom: 1rpx solid #f2f2f2;
   font-size: 28rpx;
