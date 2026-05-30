@@ -1,0 +1,9 @@
+{
+  "name": "sfds-wechat-warehouse",
+  "version": "1.0.0",
+  "description": "拾纷电商管理系统微信小程序仓库管理端",
+  "scripts": {
+    "check": "node scripts/check-json.js"
+  },
+  "devDependencies": {}
+}

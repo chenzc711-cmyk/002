@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="card">
+    <view class="section-title">日期筛选</view>
+    <picker mode="date" value="{{filterDate}}" bindchange="onFilterDate"><view class="picker-display">{{filterDate || '选择退货日期筛选'}}</view></picker>
+    <button class="ghost-btn" bindtap="clearFilter">显示全部</button>
+  </view>
+
+  <view class="card">
+    <view class="section-title">{{form.id ? '编辑退货入库信息' : '添加退货入库信息'}}</view>
+    <picker mode="date" value="{{form.date}}" bindchange="onDateChange"><view class="picker-display">{{form.date}}</view></picker>
+    <picker range="{{productLabels}}" value="{{productIndex}}" bindchange="onProductChange"><view class="picker-display">{{productLabels[productIndex] || '从库存中选择商品名称/规格'}}</view></picker>
+    <view class="form-grid">
+      <view><text class="label">订单号</text><input class="input" data-field="orderNo" value="{{form.orderNo}}" bindinput="onInput" /></view>
+      <view><text class="label">物流公司</text><input class="input" data-field="logisticsCompany" value="{{form.logisticsCompany}}" bindinput="onInput" /></view>
+      <view class="full"><text class="label">物流单号</text><input class="input" data-field="trackingNo" value="{{form.trackingNo}}" bindinput="onInput" /></view>
+      <view><text class="label">商品名称</text><input class="input" data-field="name" value="{{form.name}}" bindinput="onInput" /></view>
+      <view><text class="label">商品规格</text><input class="input" data-field="spec" value="{{form.spec}}" bindinput="onInput" /></view>
+      <view><text class="label">数量</text><input class="input" type="number" data-field="quantity" value="{{form.quantity}}" bindinput="onInput" /></view>
+      <view><text class="label">货物状态</text><picker range="{{statuses}}" value="{{statusIndex}}" bindchange="onStatusChange"><view class="picker-display">{{form.status}}</view></picker></view>
+      <view class="full"><text class="label">备注</text><textarea data-field="remark" value="{{form.remark}}" bindinput="onInput" /></view>
+    </view>
+    <button class="primary-btn" bindtap="saveRecord">保存退货入库</button>
+    <button wx:if="{{form.id}}" class="ghost-btn" bindtap="resetForm">取消编辑</button>
+  </view>
+
+  <view class="card">
+    <view class="section-title">退货入库记录</view>
+    <view class="toolbar"><button class="ghost-btn" bindtap="selectAll">全选</button><button class="danger-btn" bindtap="clearSelection">取消选择</button></view>
+    <checkbox-group bindchange="onSelectChange">
+      <label wx:for="{{records}}" wx:key="id" class="list-item">
+        <view class="item-head"><checkbox value="{{item.id}}" checked="{{item.checked}}" /><view class="item-title">{{item.date}}｜{{item.orderNo}}</view><button size="mini" class="ghost-btn mini" data-id="{{item.id}}" bindtap="editRecord">编辑</button></view>
+        <view class="item-meta"><text class="badge">{{item.status}}</text>{{item.name}} · {{item.spec}} · {{item.quantity}} 件<view>{{item.logisticsCompany}} {{item.trackingNo}}</view><view>{{item.remark}}</view></view>
+      </label>
+    </checkbox-group>
+  </view>
+</view>
