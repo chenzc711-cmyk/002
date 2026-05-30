@@ -1,0 +1,19 @@
+.balance-card {
+  background: linear-gradient(180deg, #ffffff, #fff7f8);
+}
+.balance-row {
+  display: flex;
+  justify-content: center;
+  gap: 28rpx;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #f2f2f2;
+  font-size: 28rpx;
+}
+.mini {
+  width: 118rpx;
+  min-width: 118rpx;
+  line-height: 56rpx;
+  height: 56rpx;
+  font-size: 24rpx;
+  margin: 0;
+}

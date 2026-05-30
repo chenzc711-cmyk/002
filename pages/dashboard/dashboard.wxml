@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="banner">
+    <view class="banner-kicker">TMALL STYLE OPERATIONS</view>
+    <view class="banner-title">拾纷电商管理系统</view>
+    <view class="banner-subtitle">仓储 · 入库 · 出库 · 成本一体化看板</view>
+  </view>
+
+  <view class="metric-grid">
+    <view class="metric-card primary">
+      <text class="metric-label">代发总成本</text>
+      <text class="metric-value">¥{{stats.dropshipCostText}}</text>
+    </view>
+    <view class="metric-card">
+      <text class="metric-label">库存数量</text>
+      <text class="metric-value">{{stats.inventoryQty}}</text>
+    </view>
+    <view class="metric-card">
+      <text class="metric-label">库存总金额</text>
+      <text class="metric-value">¥{{stats.inventoryAmountText}}</text>
+    </view>
+    <view class="metric-card warning">
+      <text class="metric-label">库存预警</text>
+      <text class="metric-value">{{stats.warningCount}}</text>
+    </view>
+    <view class="metric-card wide">
+      <text class="metric-label">供应商货款余额</text>
+      <text class="metric-value">¥{{stats.supplierBalanceText}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">今日出入库</view>
+    <view class="flow-row">
+      <view>
+        <text class="flow-name">今日出库</text>
+        <text class="flow-value">{{stats.todayOutQty}} 件</text>
+        <text class="flow-money">¥{{stats.todayOutAmountText}}</text>
+      </view>
+      <view>
+        <text class="flow-name">今日入库</text>
+        <text class="flow-value">{{stats.todayInQty}} 件</text>
+        <text class="flow-money">¥{{stats.todayInAmountText}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="section-title">本月累计出入库数据</view>
+    <view class="month-panel in">
+      <text>本月入库</text>
+      <text>{{stats.monthInQty}} 件 · ¥{{stats.monthInAmountText}}</text>
+    </view>
+    <view class="month-panel out">
+      <text>本月出库</text>
+      <text>{{stats.monthOutQty}} 件 · ¥{{stats.monthOutAmountText}}</text>
+    </view>
+    <view class="month-panel return">
+      <text>本月退货入库</text>
+      <text>{{stats.monthReturnQty}} 件</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,141 @@
+.banner {
+  overflow: hidden;
+  position: relative;
+  padding: 44rpx 34rpx;
+  border-radius: 34rpx;
+  color: #ffffff;
+  text-align: center;
+  background: linear-gradient(135deg, #ff0036 0%, #ff4d4f 48%, #ff8a00 100%);
+  box-shadow: 0 22rpx 60rpx rgba(255, 0, 54, 0.25);
+  margin-bottom: 26rpx;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  width: 260rpx;
+  height: 260rpx;
+  right: -80rpx;
+  top: -90rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.banner-kicker {
+  font-size: 20rpx;
+  letter-spacing: 4rpx;
+  opacity: 0.86;
+}
+
+.banner-title {
+  font-size: 48rpx;
+  font-weight: 900;
+  margin-top: 12rpx;
+}
+
+.banner-subtitle {
+  font-size: 26rpx;
+  margin-top: 14rpx;
+  opacity: 0.9;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18rpx;
+}
+
+.metric-card {
+  min-height: 150rpx;
+  padding: 24rpx;
+  border-radius: 28rpx;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 12rpx 36rpx rgba(0, 0, 0, 0.05);
+  border: 1rpx solid #fff0f3;
+}
+
+.metric-card.primary {
+  color: #ffffff;
+  background: #222222;
+}
+
+.metric-card.warning {
+  background: #fff7e8;
+}
+
+.metric-card.wide {
+  grid-column: 1 / -1;
+}
+
+.metric-label, .flow-name {
+  display: block;
+  color: inherit;
+  opacity: 0.72;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.metric-value {
+  display: block;
+  margin-top: 18rpx;
+  font-size: 42rpx;
+  text-align: center;
+  font-weight: 800;
+  color: inherit;
+}
+
+.flow-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+}
+
+.flow-row > view {
+  border-radius: 24rpx;
+  padding: 26rpx;
+  background: #fff7f8;
+  text-align: center;
+}
+
+.flow-value, .flow-money {
+  display: block;
+  margin-top: 10rpx;
+  font-weight: 800;
+}
+
+.flow-value {
+  font-size: 34rpx;
+}
+
+.flow-money {
+  color: #ff0036;
+  font-size: 28rpx;
+}
+
+.month-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18rpx;
+  padding: 24rpx;
+  border-radius: 22rpx;
+  margin-top: 16rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.month-panel.in {
+  background: #fff0f3;
+  color: #ff0036;
+}
+
+.month-panel.out {
+  background: #f2f3f5;
+  color: #222222;
+}
+
+.month-panel.return {
+  background: #fff7e8;
+  color: #d46b08;
+}

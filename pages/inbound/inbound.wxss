@@ -1,0 +1,1 @@
+.mini { width: 118rpx; min-width: 118rpx; text-align: center; line-height: 56rpx; height: 56rpx; font-size: 24rpx; margin: 0; }
