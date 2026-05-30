@@ -1,0 +1,56 @@
+<view class="container">
+  <view class="card">
+    <view class="section-title">日期筛选</view>
+    <picker mode="date" value="{{filterDate}}" bindchange="onFilterDate"><view class="picker-display">{{filterDate || '选择出库日期筛选'}}</view></picker>
+    <button class="ghost-btn" bindtap="clearFilter">显示全部</button>
+  </view>
+
+  <view class="card">
+    <view class="section-title">{{form.id ? '编辑出库信息' : '添加出库信息'}}</view>
+    <picker mode="date" value="{{form.date}}" bindchange="onDateChange"><view class="picker-display">{{form.date}}</view></picker>
+    <picker range="{{productLabels}}" value="{{productIndex}}" bindchange="onProductChange"><view class="picker-display">{{productLabels[productIndex] || '从库存中选择商品名称/规格/单价'}}</view></picker>
+    <view class="form-grid">
+      <view><text class="label">商品名称</text><input class="input" data-field="name" value="{{form.name}}" bindinput="onInput" /></view>
+      <view><text class="label">商品规格</text><input class="input" data-field="spec" value="{{form.spec}}" bindinput="onInput" /></view>
+      <view><text class="label">数量</text><input class="input" type="number" data-field="quantity" value="{{form.quantity}}" bindinput="onInput" /></view>
+      <view><text class="label">单价</text><input class="input" type="digit" data-field="price" value="{{form.price}}" bindinput="onInput" /></view>
+      <view class="full"><text class="label">总金额</text><input class="input" type="digit" data-field="total" value="{{form.total}}" bindinput="onInput" placeholder="自动按数量*单价计算，可手动修改" /></view>
+      <view class="full"><text class="label">用途/备注</text><textarea data-field="purpose" value="{{form.purpose}}" bindinput="onInput" /></view>
+    </view>
+    <button class="primary-btn" bindtap="saveRecord">保存出库</button>
+    <button wx:if="{{form.id}}" class="ghost-btn" bindtap="resetForm">取消编辑</button>
+  </view>
+
+  <view class="card cost-card">
+    <view class="section-title">{{costForm.id ? '编辑成本登记' : '添加成本登记'}}</view>
+    <picker mode="date" value="{{costForm.date}}" bindchange="onCostDateChange"><view class="picker-display">{{costForm.date}}</view></picker>
+    <input class="input" type="digit" data-field="amount" value="{{costForm.amount}}" bindinput="onCostInput" placeholder="支出金额" />
+    <input class="input" data-field="purpose" value="{{costForm.purpose}}" bindinput="onCostInput" placeholder="支出用途" />
+    <picker range="{{categories}}" value="{{categoryIndex}}" bindchange="onCategoryChange"><view class="picker-display">{{costForm.category}}</view></picker>
+    <textarea data-field="remark" value="{{costForm.remark}}" bindinput="onCostInput" placeholder="备注" />
+    <button class="primary-btn" bindtap="saveCost">保存成本</button>
+    <button wx:if="{{costForm.id}}" class="ghost-btn" bindtap="resetCostForm">取消编辑</button>
+  </view>
+
+  <view class="card">
+    <view class="section-title">出库记录</view>
+    <view class="toolbar"><button class="ghost-btn" bindtap="selectAll">全选</button><button class="danger-btn" bindtap="clearSelection">取消选择</button></view>
+    <checkbox-group bindchange="onSelectChange">
+      <label wx:for="{{records}}" wx:key="id" class="list-item">
+        <view class="item-head"><checkbox value="{{item.id}}" checked="{{item.checked}}" /><view class="item-title">{{item.date}}｜{{item.name}}</view><button size="mini" class="ghost-btn mini" data-id="{{item.id}}" bindtap="editRecord">编辑</button></view>
+        <view class="item-meta">{{item.spec}} · {{item.quantity}} 件 · 单价 ¥{{item.price}} · 总金额 ¥{{item.totalText}}<view>{{item.purpose}}</view></view>
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view class="card">
+    <view class="section-title">成本记录</view>
+    <view class="toolbar"><button class="ghost-btn" bindtap="selectAllCosts">全选</button><button class="danger-btn" bindtap="clearCostSelection">取消选择</button></view>
+    <checkbox-group bindchange="onCostSelectChange">
+      <label wx:for="{{costs}}" wx:key="id" class="list-item">
+        <view class="item-head"><checkbox value="{{item.id}}" checked="{{item.checked}}" /><view class="item-title">{{item.date}}｜{{item.category}}</view><button size="mini" class="ghost-btn mini" data-id="{{item.id}}" bindtap="editCost">编辑</button></view>
+        <view class="item-meta"><text class="badge">¥{{item.amountText}}</text>{{item.purpose}}<view>{{item.remark}}</view></view>
+      </label>
+    </checkbox-group>
+  </view>
+</view>

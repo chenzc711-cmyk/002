@@ -1,0 +1,47 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48rpx;
+  box-sizing: border-box;
+  background: radial-gradient(circle at top left, #ff7a45 0%, transparent 30%), linear-gradient(145deg, #ff0036 0%, #1f1f1f 100%);
+}
+
+.login-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 36rpx;
+  padding: 56rpx 38rpx;
+  box-shadow: 0 28rpx 80rpx rgba(0, 0, 0, 0.22);
+  text-align: center;
+}
+
+.brand-mark {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 34rpx;
+  margin: 0 auto 28rpx;
+  color: #ffffff;
+  font-size: 38rpx;
+  font-weight: 800;
+  line-height: 132rpx;
+  background: linear-gradient(135deg, #ff0036, #ff6a00);
+}
+
+.title {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #202020;
+}
+
+.subtitle {
+  color: #777777;
+  font-size: 26rpx;
+  margin: 18rpx 0 42rpx;
+}
+
+.code-input {
+  text-align: center;
+  letter-spacing: 8rpx;
+}
